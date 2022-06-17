@@ -49,7 +49,7 @@ ssh -i [pem 파일 경로] [사용자이름]@[접속할 IP]
 
 pem 키 파일을 넣고 접속이 문제없이 진행되었다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%204.png)
+![Untitled 4](https://user-images.githubusercontent.com/84123877/174318605-a8d920a0-3ac1-4e47-aa01-6078e5d96f1b.png)
 
 ```bash
 vi /home/ec2-user/.ssh/authorized_keys
@@ -58,7 +58,7 @@ vi /home/ec2-user/.ssh/authorized_keys
 호스트 서버로 접속하였으니, 해당 서버의 authorized_keys로 들어가 복사했던
 키를 넣어준다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%205.png)
+![Untitled 5](https://user-images.githubusercontent.com/84123877/174318606-cd984ef4-cd45-419a-87db-aec0795f2551.png)
 
 > 윗 줄은 이미 들어가있는 키값(pem파일) 이고, 
 뒤로 이어서 작성해주면 된다.
@@ -68,17 +68,17 @@ vi /home/ec2-user/.ssh/authorized_keys
 
 동일하게 모든 인스턴스에 적용시킨다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%206.png)
+![Untitled 6](https://user-images.githubusercontent.com/84123877/174318608-cafdde8a-8291-4650-bf2d-922287bd76de.png)
 
 > 인벤토리 파일에 ip 추가 완료
 > 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%207.png)
+![Untitled 7](https://user-images.githubusercontent.com/84123877/174318610-baa7e170-7870-4dda-9079-cbb6804ead0c.png)
 
 > 오류가 발생했다..unreachable.....failed to connect to the host via ssh: premission denied...
 > 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%208.png)
+![Untitled 8](https://user-images.githubusercontent.com/84123877/174318612-39dbcbaf-ec3c-41c2-8a64-c47cf65d9f04.png)
 
 > ssh-copy-id로 키를 전달한 ubuntu는 잘 작동된다..
 > 
@@ -91,7 +91,7 @@ scp 명령어로 공개키를 전송해도 작동되지않는다.
 
 그런데, 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%209.png)
+![Untitled 9](https://user-images.githubusercontent.com/84123877/174318616-10fe9d5e-a3c9-4aa7-bfb7-060b77534191.png)
 
 > 혹시 몰라서 공개 키 내용을 다시 넣어봤더니 잘 작동된다….
 키를 넣을때 공백 등 내용에 문제가 있어나봄….
@@ -112,7 +112,7 @@ scp 명령어로 공개키를 전송해도 작동되지않는다.
 -u 명령어를 더 추기하는 방법을 찾지 못해 ubuntu server도 ec2-user라는 사용자를 추가했다.
 <이젠 ec2-user 로 명령을 넣으면 4개의 서버가 반응할것.>
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2010.png)
+![Untitled 10](https://user-images.githubusercontent.com/84123877/174318621-7426c1a4-7bc1-4e5a-958d-68018bda95c1.png)
 
 ```bash
 $ ansible -m command -a 'ls /' all -u ec2-user
@@ -126,12 +126,12 @@ ansible_user=[유저이름] 은 -u [유저이름] 이 명령어를 자동으로 
 
 그룹 chan, woo 2개에 서버 2개씩 주소를 넣어주었다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2011.png)
+![Untitled 11](https://user-images.githubusercontent.com/84123877/174318624-d779ae09-4901-41cd-9aa7-a679522bc83c.png)
 
 > 본인의 경로 : /home/ec2-user/.ssh/test/group.ini
 > 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2012.png)
+![Untitled 12](https://user-images.githubusercontent.com/84123877/174318628-dd649375-e93d-4981-b6af-96cd1f9df356.png)
 
 ```bash
 ansible --list-hosts web -i group.ini  - web그룹 확인하기
@@ -151,12 +151,12 @@ ansible 명령어를 ini 파일을 이용해서 사용할 때는 해당 파일�
 
 각 그룹에 명령어를 내려보겠다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2013.png)
+![Untitled 13](https://user-images.githubusercontent.com/84123877/174318631-fb77f785-5b76-481f-864b-cbf543ef8e31.png)
 
 > chan 그룹 df -h 명령어
 > 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2014.png)
+![Untitled 14](https://user-images.githubusercontent.com/84123877/174318633-dc5be7d6-faaf-4d60-9b05-8cec3af1a506.png)
 
 > woo 그룹 df -h 명령어
 > 
@@ -165,7 +165,7 @@ ansible 명령어를 ini 파일을 이용해서 사용할 때는 해당 파일�
 
 이와 같이 나온 내용을 txt 파일로 저장하려고 한다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2015.png)
+![Untitled 15](https://user-images.githubusercontent.com/84123877/174318635-b879ce95-e7dd-4241-a6b6-937c74a66192.png)
 
 ```bash
 $ ansible -m command -a 'df -h /' > test.txt chan -i group.ini
@@ -178,12 +178,12 @@ chan 이라는 그룹 안에 있는 호스트들에 한해서 df -h 명령어를
 
 위 사진으로  내용이 보여지며 저장하고 생성된 것을 확인할 수 있다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2016.png)
+![Untitled 16](https://user-images.githubusercontent.com/84123877/174318638-d06f33f6-4d90-4448-836a-2cb31f547b6a.png)
 
 > cat 명령어로 확인해보면 어떤 서버이고 어떤 내용인지 확인이 가능하다.
 > 
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2017.png)
+![Untitled 17](https://user-images.githubusercontent.com/84123877/174318641-6b6e8e77-fa94-4aec-8422-8290c46fe47c.png)
 
 > 만약에 다른 내용을 test.txt로 넣으면 처음에 넣었던 내용들은 사라지고,
 새로운 내용들로 저장된다.
@@ -194,7 +194,7 @@ chan 이라는 그룹 안에 있는 호스트들에 한해서 df -h 명령어를
 만들었던 test.txt에 내용을 더 추가하려고 한다.
 df -h 명령을 내리고 내용을 이어서 더 추가해본다.
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2018.png)
+![Untitled 18](https://user-images.githubusercontent.com/84123877/174318645-79d58c7d-f272-49f7-8536-7d4888eaf3a6.png)
 
 ```bash
 ansible -m command -a 'df -h /' >> test.txt chan -i /home/ec2-user/.ssh/test/group.ini
@@ -205,7 +205,7 @@ ansible -m command -a 'df -h /' >> test.txt chan -i /home/ec2-user/.ssh/test/gro
 
 ansible 서버의 가동시간을 확인
 
-![Untitled](%5BAnsible%5D%20%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%89%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF(Ansible)%20%E1%84%92%E1%85%A9%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%20%E1%84%82%E1%85%A2%E1%84%85%E1%85%B5%E1%84%80%E1%85%B5%20ed8562397f25498894104e32772a9a15/Untitled%2019.png)
+![Untitled 19](https://user-images.githubusercontent.com/84123877/174318646-f5e5795b-2bda-4c95-8bb6-839f26cd5674.png)
 
 ```bash
 $ ansible localhost -m command -a uptime
