@@ -61,7 +61,7 @@ password expires(패스워드 만료일) 이 never(무한) 으로 설정되어�
 
 일단 애드혹(모듈)로 구현은 가능하다. 하지만 root 권한을 이용해야 하고, 지속성을 위해 playbook으로 기능을 완성해야한다. (근데 playbook에서는 기본적으로 결과값이 리턴되지 않는다.)
 
-관련 자료들을 조사하니 tasks값을 register로 변수로 저장 가능하고, 이를 debug 창에 띄울 수 있다고 한다.
+관련 자료들을 조사하니 tasks값을 register 변수로 저장 가능하고, 이를 debug 창에 띄울 수 있다고 한다.
 게다가 shell 에서 패스워드 정보를 찾는 명령어 앞에 sudo를 붙이니 root 계정의 정보도 가져올 수 있었다.
 
 ![Untitled 6](https://user-images.githubusercontent.com/84123877/176133360-f7722ecf-7591-4972-b960-4d78c15f15fd.png)
