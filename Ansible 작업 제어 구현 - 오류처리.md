@@ -121,7 +121,8 @@ changed가 나와야 하는 task에 대해서도 changed로 보고하지 않고 
 
 (true로 한다면 changed로 보고된다.)
 
-![Untitled](Ansible%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%20%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB%20-%20%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5%208e4ed2ef58904455b72c5d99cab03367/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/177113197-16e751bf-d26c-4d7b-959a-c2d76e867dac.png)
+
 
 ```yaml
 ---
