@@ -12,7 +12,4 @@ Girl Develop It 창업자
 
 ## Ansible Funtion
 
-- [출력 결과 관리 (결과값 파일로 저장)]
-
-
-https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%B6%9C%EB%A0%A5%20%EA%B2%B0%EA%B3%BC%20%EA%B4%80%EB%A6%AC%20(%EA%B2%B0%EA%B3%BC%EA%B0%92%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%EC%A0%80%EC%9E%A5.md
+- [출력 결과 관리 (결과값 파일로 저장)](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%B6%9C%EB%A0%A5%20%EA%B2%B0%EA%B3%BC%20%EA%B4%80%EB%A6%AC%20(%EA%B2%B0%EA%B3%BC%EA%B0%92%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%EC%A0%80%EC%9E%A5.md)
