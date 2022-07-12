@@ -12,5 +12,5 @@ Girl Develop It 창업자
 
 ## Ansible Funtion
 
-- [Ansible 개념과 설치/사용법](https://github.com/chanW-pack/Ansible/blob/main/1.%20%5BAnsible%5D%20%EC%95%A4%EC%84%9C%EB%B8%94(Ansible)%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%B9%98%EC%82%AC%EC%9A%A9%EB%B2%95%20(w%20Amazon%20Linux).md)
+- [Ansible 개념과 설치/사용법](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%B6%9C%EB%A0%A5%20%EA%B2%B0%EA%B3%BC%20%EA%B4%80%EB%A6%AC%20(%EA%B2%B0%EA%B3%BC%EA%B0%92%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%EC%A0%80%EC%9E%A5.md)
 - [Ansible 개념과 설치/사용법](https://github.com/chanW-pack/Ansible/blob/main/1.%20%5BAnsible%5D%20%EC%95%A4%EC%84%9C%EB%B8%94(Ansible)%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%B9%98%EC%82%AC%EC%9A%A9%EB%B2%95%20(w%20Amazon%20Linux).md)
