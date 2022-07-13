@@ -25,7 +25,8 @@
 
 ---
 
-[LVM 용량 추가 및 축소](https://github.com/chanW-pack/Linux_OS/blob/main/Linux%20LVM%20%EC%9A%A9%EB%9F%89%20%EC%B6%94%EA%B0%80%20%EB%B0%8F%20%EC%B6%95%EC%86%8C.md)
+[LVM 용량 추가 및 축소]
+[Linux LVM 용량 추가 및 축소.md](https://github.com/chanW-pack/Linux_OS/blob/main/Linux%20LVM%20%EC%9A%A9%EB%9F%89%20%EC%B6%94%EA%B0%80%20%EB%B0%8F%20%EC%B6%95%EC%86%8C.md)
 
 > LVM 증설 및 축소에 대한 내용은 해당 페이지에서 확인 가능하다.
 > 
