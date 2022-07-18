@@ -38,7 +38,7 @@
 
 하지만 아직 Vfree 용량과 파일시스템을 알 수 없기 때문에 함부 증설을 진행할 수 없다.
 
-ansible로 하나씩 진행하겠다.
+ansible로 하나씩 진행하겠다. (기능을 하나 보려고 하는거니 합쳐서 진행해도 무관하다.)
 
 ![Untitled 1](https://user-images.githubusercontent.com/84123877/178641958-b941f50d-8514-48e3-bb2c-7cb9b3e0340d.png)
 
