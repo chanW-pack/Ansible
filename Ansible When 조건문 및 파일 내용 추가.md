@@ -12,7 +12,7 @@ EC2 3개 (ansible1, hosts2) 로 테스트를 진행해보겠다.
 
 일단 이미 존재하는 파일에서 내용을 추가하는 기능을 실습하겠다.
 
-ansible의 lineinfile 모듈은 regular expression을 사용하여 파일의 내용을 변경하는 작업을 하는 모듈이다.
+ansible의 lineinfile 모듈은 regular expression을 사용하여 파일의 내용을 변경하는 작업을 하는 모듈이다. </br>
 ( regular expression/정규 표현식 은 문자열에서 특정 문자 조합을 찾기 위한 패턴이다.)
 
 ![Untitled](https://user-images.githubusercontent.com/84123877/180950879-cf08a590-b6b0-48f0-83b6-0497cdeb4de9.png)
