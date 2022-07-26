@@ -15,7 +15,7 @@ EC2 3개 (ansible1, hosts2) 로 테스트를 진행해보겠다.
 ansible의 lineinfile 모듈은 regular expression을 사용하여 파일의 내용을 변경하는 작업을 하는 모듈이다.
 ( regular expression/정규 표현식 은 문자열에서 특정 문자 조합을 찾기 위한 패턴이다.)
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/180950879-cf08a590-b6b0-48f0-83b6-0497cdeb4de9.png)
 
 ```yaml
 ---
@@ -40,9 +40,9 @@ ansible의 lineinfile 모듈은 regular expression을 사용하여 파일의 내
 
 ~~(파일명이 rc.local 인걸로 실습 이유를 눈치채셨을까요??)~~
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/180950859-b26078d9-aad0-413a-8389-79a373e44e65.png)
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/84123877/180950861-09116a1d-f99b-4e70-8952-59adf667e120.png)
 
 > (위) hosts server 1 기존 파일 내용 | (아래) hosts server 1 ansible 작동 후 파일 내용
 > 
@@ -60,7 +60,7 @@ hosts server1 에는 cwcw 디렉터리가 존재하고, hosts server 2에는 cwc
 
 when 조건문을 활용하여 cwcw 디렉터리의 존재 유무를 파악하고 cwcw 디렉터리가 존재하지 않는 경우에만 cwcw 디렉터리를 생성해주겠다.
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%203.png)
+![Untitled 3](https://user-images.githubusercontent.com/84123877/180950862-93a9ebc3-c0ac-4a79-92d7-d5f7508449bc.png)
 
 ```yaml
 ---
@@ -87,14 +87,14 @@ when 조건문을 활용하여 cwcw 디렉터리의 존재 유무를 파악하�
 
 (참고로 name에 lvm 어쩌구는 무시해라.. 수정을 깜빡하고 못함)
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%204.png)
+![Untitled 4](https://user-images.githubusercontent.com/84123877/180950865-bf89e3b2-dca9-4cda-9dae-7451b7f25031.png)
 
 > cwcw 디렉터리가 존재하지 않는 hosts server 2에 cwcw 디렉터리가 생성되면 성공한것이다.
 > 
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%205.png)
+![Untitled 5](https://user-images.githubusercontent.com/84123877/180950866-b2ce3738-5f8a-4bbc-b09b-026dab2c08d8.png)
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%206.png)
+![Untitled 6](https://user-images.githubusercontent.com/84123877/180950869-bb8ab09e-b364-4545-9443-c376d603e911.png)
 
 > task 실행 결과 내용에 이미 cwcw가 존재하는 hosts 1은 skipped 된 것을 확인할 수 있다.
 > 
@@ -111,7 +111,7 @@ hosts2에 cwcw 디렉터리가 성공적으로 생성되었다. 성공~
 
 이제 실제로 본인이 필요한 기능을 테스트해보겠다.
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%207.png)
+![Untitled 7](https://user-images.githubusercontent.com/84123877/180950870-23c10432-2554-4d51-baa8-3291b86bc445.png)
 
 ```yaml
 ---
@@ -143,17 +143,17 @@ hosts2에 cwcw 디렉터리가 성공적으로 생성되었다. 성공~
 
 (hosts 2 cwcw는 삭제했다^^)
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%208.png)
+![Untitled 8](https://user-images.githubusercontent.com/84123877/180951220-07679597-f7e1-4254-a880-a585b03dfce4.png)
 
 > 오류없이 성공적으로 진행되었다.
 > 
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%209.png)
+![Untitled 9](https://user-images.githubusercontent.com/84123877/180950873-7df44133-aa10-4456-a437-490450598dea.png)
 
 > 아무런 변화가 없는 cwcw 미존재 hosts 2.
 > 
 
-![Untitled](Ansible%20When%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%204d2908f0e19643d69a0bdf3ddb8160ea/Untitled%2010.png)
+![Untitled 10](https://user-images.githubusercontent.com/84123877/180950877-b8350975-7340-4af6-9fbf-566c29e42efb.png)
 
 > 반면 cwcw 디렉터리가 존재하는 hosts 1은 rc.local 파일 라인이 더 추가된것을 확인할 수 있다.
 > 
