@@ -17,3 +17,4 @@ Girl Develop It 창업자
 - [작업 제어 구현 - 오류처리](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%9E%91%EC%97%85%20%EC%A0%9C%EC%96%B4%20%EA%B5%AC%ED%98%84%20-%20%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC.md)
 - [원격 LVM 증설](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%9B%90%EA%B2%A9%20LVM%20%EC%A6%9D%EC%84%A4.md)
 - [When 조건문 및 파일 내용 추가 (+조건이 만족하면 파일추가)](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20When%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%20%EB%B0%8F%20%ED%8C%8C%EC%9D%BC%20%EB%82%B4%EC%9A%A9%20%EC%B6%94%EA%B0%80.md)
+- [When 조건문 트리구조 생성 (includ_tasks, 여러 조건 사용)](https://github.com/chanW-pack/Ansible/blob/main/Ansible%20When%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%20%ED%8A%B8%EB%A6%AC%EA%B5%AC%EC%A1%B0%20%EC%83%9D%EC%84%B1%20(includ_tasks).md)
