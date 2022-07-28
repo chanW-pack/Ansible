@@ -60,7 +60,7 @@ ansible server에서 chan 디렉터리가 있는 경우에는(if) 각 서버에 
 
 이렇게 트리 형식으로 조건에 맞게 yaml 파일들을 불러오면 매우 효율적이다.
 
-(chan 디렉터리가 존재하면 chan.yaml 진행하는 식.)
+(chan 디렉터리가 존재하면 chan.yaml 을 불러와 진행한다. chan 디렉터리가 존재하는 서버에만 실행하는것.)
 
 ![Untitled 3](https://user-images.githubusercontent.com/84123877/181406162-f00798fa-fa52-4ce6-85dd-ff67ff62f7a9.png)
 
