@@ -24,7 +24,7 @@ CLI나 playbook 작업에서 사용할 수 있는 별도의 코드 단위이다.
 
 -a로 쉘에서 동작시킬 명령어를 입력시킬 수 있다.
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/182301655-3aa469de-adeb-4199-815d-f75a325853e3.png)
 
 > 위 명령어를 입력하면 inventory에 지정한 [all] 모든 그룹에게 shell 모듈로 ls 명령어를 실행하게 된다.
 > 
