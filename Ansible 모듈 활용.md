@@ -31,7 +31,7 @@ CLI나 playbook 작업에서 사용할 수 있는 별도의 코드 단위이다.
 
 (참고로 본인은 inventory를 새로 작성하여 진행했기 때문에 inventory를 -i 옵션으로 지정해주었다.)
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/182301640-741fca3b-6037-49dd-ad46-2bb83b2c59cc.png)
 
 > 마찬가지로 whoami 명령어를 동작시킨 모습.
 > 
@@ -46,14 +46,14 @@ CLI나 playbook 작업에서 사용할 수 있는 별도의 코드 단위이다.
 ansible all -m user -a 'name=a'
 ```
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/84123877/182301643-71316c0c-5a5e-4b0c-bec0-438f467606c6.png)
 
 > 위 명령어를 입력하면 user 모듈을 사용하여 cwking 이라는 사용자 계정을 생성한다.
 > 
 
 chanwooking 계정이 host 서버에 생성된 것을 확인할 수 있다.
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%203.png)
+![Untitled 3](https://user-images.githubusercontent.com/84123877/182301644-600cb59f-ec71-477b-aee6-41626ad8bde8.png)
 
 ```bash
 ansible all -m user -a "name=a update_password=always password={{ 'P@ssw0rd' | password_hash('sha512') }}"
@@ -78,12 +78,12 @@ state=absent를 입력하면 지정한 사용자를 제거할 수 있다.
 ansible web -m yum -a "name=httpd state=latest"
 ```
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%204.png)
+![Untitled 4](https://user-images.githubusercontent.com/84123877/182301645-eb91467f-99dd-47b9-867e-c296c830f032.png)
 
 > yum 모듈을 사용하여 httpd 패키지를 설치하는 명령어이다.
 > 
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%205.png)
+![Untitled 5](https://user-images.githubusercontent.com/84123877/182301646-44d6723a-62cb-4640-8d14-2d9777dacca8.png)
 
 > 다음과 같이 shell 모듈을 사용하여 rpm -qa로 패키지가 설치된 것을 확인할 수 있다.
 > 
@@ -106,7 +106,7 @@ src는 복사할 원본 파일의 위치를 지정하고 dest는 파일이 복�
 
 데몬을 동작시키기 위한 systemctl 명령어를 사용하기 위한 모듈이다.
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%206.png)
+![Untitled 6](https://user-images.githubusercontent.com/84123877/182301650-9b090064-a0ef-45c8-8b21-274a7ee6b947.png)
 
 ```bash
 ansible web -m service -a "name=httpd state=started"
@@ -151,7 +151,7 @@ ann3
 
 ann[1:3]은 ann1, ann2, ann3를 묶어서 작성하는 방법이다.
 
-![Untitled](Ansible%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%201b47ee18606e4d09a230dc3d9dab3de3/Untitled%207.png)
+![Untitled 7](https://user-images.githubusercontent.com/84123877/182301652-388f12c7-3fbb-48da-bffa-6e869d1ea166.png)
 
 > 위 예시처럼 모듈에서 인벤토리를 -i옵션으로 지정하여 사용할 수 있다.
 > 
