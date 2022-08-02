@@ -1,8 +1,10 @@
 # Ansible
 
-"코드를 짜기 위해 천재일 필요는 없다! 그냥 시작하라."
-- `Vanessa Hurst's`
-Girl Develop It 창업자
+"사업에 쓰이는 그 어떤 기술에도 적용되는 첫번째 규칙은, </br>
+효율적인 작업을 위해 적용된 자동화 방식이 효율화를 극대화시킬 것이라는 점이다.</br> </br>
+두번째 규칙은, 비효율적인 작업을 위해 적용된 자동화 방식은 비효율화를 극대화시킬 것이라는 점이다."
+- `William Henry "Bill" Gates III`
+Microsoft CEO 
 
 ## Ansible 개념 (기초 기능)
 
