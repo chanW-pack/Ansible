@@ -47,29 +47,18 @@ ansible.cfg에는 크게 2가지 섹션이 있다.
 
 ### [default]
 
-| inventory = ./inventory | 사용할 인벤토리 파일의 경로
-- 정적 인벤토리 파일 또는 여러개의 정적 인벤토리를 명시
-- 동적 인벤토리 스크립트를 포함하는 디렉토리 명시 |
+| inventory = ./inventory | 사용할 인벤토리 파일의 경로 </br> - 정적 인벤토리 파일 또는 여러개의 정적 인벤토리를 명시 </br> - 동적 인벤토리 스크립트를 포함하는 디렉토리 명시 |
 | --- | --- |
-| remote_user = user | 관리 호스트에 연결할 사용자의 이름. 관리 호스트에서 사용하므로 관리 호스트에 해당 유저가 존재해야 한다.
-이 구문을 따로 명시하지 않으면 ansible은 ansible 명령을 실행하는 로컬 사용자명을 사용하여 관리 호스트에 연결한다. |
-| ask_pass=false | ssh 암호를 요청하는 메세지 표시 여부를 결정
-제어노드에서 관리 호스트에 연결할 사용자에 대해 인증할 수 있는 키가 구성된 경우 따로 비밀번호를 물어보지 않고 자동으로 로그인된다.
-이런 경우 ssh 암호를 요청할 필요가 없으므로 false로 설정한다.
-(default는 false이다.) 즉, 비밀번호를 입력해야 하도록 설정된 경우는 true로 설정한다. |
+| remote_user = user | 관리 호스트에 연결할 사용자의 이름. 관리 호스트에서 사용하므로 관리 호스트에 해당 유저가 존재해야 한다. </br> 이 구문을 따로 명시하지 않으면 ansible은 ansible 명령을 실행하는 로컬 사용자명을 사용하여 관리 호스트에 연결한다. |
+| ask_pass=false | ssh 암호를 요청하는 메세지 표시 여부를 결정 </br> 제어노드에서 관리 호스트에 연결할 사용자에 대해 인증할 수 있는 키가 구성된 경우 따로 비밀번호를 물어보지 않고 자동으로 로그인된다. </br> 이런 경우 ssh 암호를 요청할 필요가 없으므로 false로 설정한다. </br> (default는 false이다.) 즉, 비밀번호를 입력해야 하도록 설정된 경우는 true로 설정한다. |
 
 ### [privilege_escalation]
 
-| become=true | remote_user로 연결한 유저를 sudo 또는 su를 사용하여 특정 상급 유저로 전환할지 여부
-사용하는 모듈에 root 권한이 필요할 수 있다. 상급 유저로 전환하러면 true를 설정한다. 하지만 이렇게 설정해도 ansible 명령 혹은 ansible-playbook 실행 시 다양한 방법으로이를 재정의할 수 있다. |
+| become=true | remote_user로 연결한 유저를 sudo 또는 su를 사용하여 특정 상급 유저로 전환할지 여부. </br> 사용하는 모듈에 root 권한이 필요할 수 있다. 상급 유저로 전환하러면 true를 설정한다. 하지만 이렇게 설정해도 ansible 명령 혹은 ansible-playbook 실행 시 다양한 방법으로이를 재정의할 수 있다. |
 | --- | --- |
-| become_method= sudo | 상급 유저로 전환하는 방법을 명시한다.
-default는 sudo이고, su는 옵션이다. 일반적으로 sudo 그대로 사용한다. |
-| become_user=root | 상급 유저로 전환할 때, 어떤 유저로 전환할지 명시한다.
-default는 root이다. |
-| becom_ask_pass=false | become_method의 암호를 요청하는 메세지 표시 여부
-default는 false로, 상급 유저로 전환할 때 sudoers 설정을 따로 하지 않아 상급유저의 암호를 입력해야 한다면 이 값을 true로 설정해야 한다.
-inventory 항목에서 remote_user로 설정한 유저가 sudo 권한이 있다면 이 값은 false로 하면 된다. |
+| become_method= sudo | 상급 유저로 전환하는 방법을 명시한다. </br> default는 sudo이고, su는 옵션이다. 일반적으로 sudo 그대로 사용한다. |
+| become_user=root | 상급 유저로 전환할 때, 어떤 유저로 전환할지 명시한다. </br> default는 root이다. |
+| becom_ask_pass=false | become_method의 암호를 요청하는 메세지 표시 여부 </br> default는 false로, 상급 유저로 전환할 때 sudoers 설정을 따로 하지 않아 상급유저의 암호를 입력해야 한다면 이 값을 true로 설정해야 한다. </br> inventory 항목에서 remote_user로 설정한 유저가 sudo 권한이 있다면 이 값은 false로 하면 된다. |
 
 > 구성파일 내에서 주석 사용 :
 > 
