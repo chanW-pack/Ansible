@@ -24,6 +24,7 @@ Microsoft CEO -->
 
 - [출력 결과 관리 (결과값 파일로 저장)](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%B6%9C%EB%A0%A5%20%EA%B2%B0%EA%B3%BC%20%EA%B4%80%EB%A6%AC_(%EA%B2%B0%EA%B3%BC%EA%B0%92%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%EC%A0%80%EC%9E%A5).md)
 - [여러 서비스들 계정 삭제](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%97%AC%EB%9F%AC%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%A4%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C.md)
-- [원격 LVM 증설]([https://github.com/chanW-pack/Ansible/blob/main/Ansible%20%EC%9B%90%EA%B2%A9%20LVM%20%EC%A6%9D%EC%84%A4.md](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%9B%90%EA%B2%A9%20LVM%20%EC%A6%9D%EC%84%A4.md))
+- [원격 LVM 증설](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%9B%90%EA%B2%A9%20LVM%20%EC%A6%9D%EC%84%A4.md))
 - [Ansible_sysstat 수집 주기 변경](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_sysstat%20%EC%88%98%EC%A7%91%20%EC%A3%BC%EA%B8%B0%20%EB%B3%80%EA%B2%BD.md)
-- 
+
+
