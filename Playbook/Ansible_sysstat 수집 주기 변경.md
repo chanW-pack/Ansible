@@ -88,7 +88,7 @@ vi /usr/lib/systemd/system/sysstat-collect.timer = 10 → 1로 변경하고, sys
 > 실행 후
 > 
 
-10분 주기로 기록되던 모니터링이 1분 주기로 정상적으로 변경이 완료되었다.
+10분 주기로 기록되던 모니터링이 1분 주기로 변경이 완료되었다.
 
 다만, deamon-reload를 진행하기 때문에 다른 사용중인 service를 잘 파악해야 한다.
 
