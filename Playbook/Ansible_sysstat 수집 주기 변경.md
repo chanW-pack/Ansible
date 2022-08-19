@@ -9,7 +9,7 @@
 수집 주기를 10분에서 1분으로 변경을 위해서 
 vi /usr/lib/systemd/system/sysstat-collect.timer = 10 → 1로 변경하고, systemctl restart를 적용하는  playbook을 작성하겠다.
 
-![Untitled](Ansible%20sysstat%20%E1%84%89%E1%85%AE%E1%84%8C%E1%85%B5%E1%86%B8%20%E1%84%8C%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%87%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%20578f2c6676de4e1d9e0b67b70885303b/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/185519742-18aaccd4-993c-40d6-9e71-b46df4fd0672.png)
 
 ```bash
 ---
@@ -78,12 +78,12 @@ vi /usr/lib/systemd/system/sysstat-collect.timer = 10 → 1로 변경하고, sys
 
 ## 실행 결과
 
-![Untitled](Ansible%20sysstat%20%E1%84%89%E1%85%AE%E1%84%8C%E1%85%B5%E1%86%B8%20%E1%84%8C%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%87%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%20578f2c6676de4e1d9e0b67b70885303b/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/185519750-db0ecc1e-0970-43b6-8993-a5d9b72afd49.png)
 
 > 실행 전
 > 
 
-![Untitled](Ansible%20sysstat%20%E1%84%89%E1%85%AE%E1%84%8C%E1%85%B5%E1%86%B8%20%E1%84%8C%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%87%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%20578f2c6676de4e1d9e0b67b70885303b/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/84123877/185519751-cf4ed452-f2f7-4b42-b787-09fcca8267ef.png)
 
 > 실행 후
 > 
