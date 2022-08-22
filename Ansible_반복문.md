@@ -22,7 +22,7 @@ ansible 2.4 까지는 with_* 키워드를 사용하여 작업했는데, ansible 
 
 (user 모듈로 삭제를 진행한다.)
 
-![2022-08-22 18 08 57.png](Ansible%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB%20129ff3c16a8348f1a88f1135e07978f2/2022-08-22_18_08_57.png)
+![2022-08-22_18_08_57](https://user-images.githubusercontent.com/84123877/185886710-8c54a3d1-e925-474d-b3bf-b6bbaf5d5f4c.png)
 
 ```yaml
 ---
@@ -52,17 +52,17 @@ ansible 2.4 까지는 with_* 키워드를 사용하여 작업했는데, ansible 
 
 사용자명는 d-user 변수에 저장되어 있고, 이를 반복문을 통해 하나씩 불러와 사용한다.
 
-![Untitled](Ansible%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB%20129ff3c16a8348f1a88f1135e07978f2/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/185886721-4afcaaba-fb09-4fee-a4dd-229ddd3887ec.png)
 
 > server B에 생성되어있는 cwcw1-4 user.
 > 
 
-![Untitled](Ansible%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB%20129ff3c16a8348f1a88f1135e07978f2/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/185886714-88cf660d-4f4f-471d-80f1-b605a4d83f4b.png)
 
 > 반복문으로 task가 순차적으로 진행된다.
 > 
 
-![Untitled](Ansible%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB%20129ff3c16a8348f1a88f1135e07978f2/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/84123877/185886718-8ab82001-2063-41df-904f-f714ab2d1b5f.png)
 
 > 성공적으로 cwcw1-4 user 가 삭제되었다.
 > 
