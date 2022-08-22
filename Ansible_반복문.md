@@ -15,7 +15,7 @@ ansible 2.4 까지는 with_* 키워드를 사용하여 작업했는데, ansible 
 ## with_item 반복문
 ---
 
-추후 추가 
+추후 추가 예정
 
 ## loop 반복문
 
