@@ -1,0 +1,29 @@
+---
+  - hosts: all
+    name: no1.1 user del
+    gather_facts: false
+    become: true
+
+    vars:
+      d_user:
+        - lp
+        - uucp
+        - nuucp
+        - mail
+        - games
+        - ftp
+        - pipewire
+        - pulse
+        - gluster
+        - setroubleshoot
+        - saslauth
+        - qumu
+        - usbmuxd
+
+    tasks:
+      - name: Default user del
+        user:
+          name: "{{ item }}"
+          state: "absent"
+        loop:
+          "{{ d_user }}"

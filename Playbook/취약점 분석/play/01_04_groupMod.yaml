@@ -1,0 +1,18 @@
+---
+  - hosts: no1.4
+    name: no1.4 group mod change
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: permission change
+        file:
+          path: "/etc/group"
+          mode: 0644
+
+      - name: ls -la
+        shell: ls -la /etc/ | grep 'group$'
+        register: group
+
+      - debug:
+         var: group.stdout_lines

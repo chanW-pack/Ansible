@@ -1,0 +1,2 @@
+[all]
+ 192.168.1.11_glcrwb11p ansible_ssh_user=cerasys 
