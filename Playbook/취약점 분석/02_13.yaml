@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no2.13 PTF 접근제어 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: /ftpusers
+        shell: find / -type f -name 'ftpusers' -exec ls -al {} \;
+        register: ftpusers
+        ignore_errors: yes
+
+      - debug:
+         var: ftpusers.stdout_lines

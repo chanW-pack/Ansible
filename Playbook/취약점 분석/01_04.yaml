@@ -1,0 +1,16 @@
+---
+  - hosts: all
+    name: no1.4 group 파일 권한 설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: group Pemission check
+        shell: |
+          ls -la /etc | grep 'group$'
+        register: command_output
+
+
+      - debug:
+         var: command_output.stdout_lines
+

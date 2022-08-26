@@ -1,0 +1,19 @@
+---
+  - hosts: all
+    name: no2.17 기타 중요파일 권한설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+    #  - name: etc -> link
+    #    shell: ls -la /etc | grep rc.d
+    #    register: link
+
+      - name: rc.d Original
+        shell: ls -la /etc/rc.d | grep 'rc'
+        register: origin
+
+      - debug:
+         msg: 
+     #      - "{{ link.stdout }}"
+           - "{{ origin.stdout }}"

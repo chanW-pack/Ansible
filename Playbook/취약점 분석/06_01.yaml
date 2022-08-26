@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no6.1 보안 패치 적용 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: redhat os version check
+        shell: cat /etc/redhat-release
+        register: redhay
+        ignore_errors: yes
+
+      - debug:
+         var: redhay.stdout_lines

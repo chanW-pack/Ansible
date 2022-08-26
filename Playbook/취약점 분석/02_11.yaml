@@ -1,0 +1,64 @@
+---
+  - hosts: all
+    name: no2.11 주요 디렉터리 파일 권한 설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: /sbin
+        shell: ls -la / | grep 'sbin'
+        register: sbin
+        ignore_errors: yes
+
+      - debug:
+         var: sbin.stdout_lines
+
+      - name: /etc
+        shell: ls -la / | grep 'etc'
+        register: etc
+        ignore_errors: yes
+
+      - debug:
+         var: etc.stdout_lines
+
+      - name: /bin
+        shell: ls -la / | grep 'bin'
+        register: bin
+        ignore_errors: yes
+
+      - debug:
+         var: bin.stdout_lines
+
+      - name: /usr/sbin
+        shell: ls -la /usr | grep 'sbin'
+        register: usr_sbin
+        ignore_errors: yes
+
+      - debug:
+         var: usr_sbin.stdout_lines
+
+      - name: /usr/bin
+        shell: ls -la /usr | grep 'bin'
+        register: usr_bin
+        ignore_errors: yes
+
+      - debug:
+         var: usr_bin.stdout_lines
+
+      - name: /usr/lbin
+        shell: ls -la /usr | grep 'lbin'
+        register: usr_lbin
+        ignore_errors: yes
+      
+      - debug:
+         var: usr_lbin.stdout_lines
+
+#      - debug:
+#         msg: 
+#           - "{{ sbin.stdout }}"
+#           - "{{ etc.stdout }}"
+#           - "{{ bin.stdout }}"
+#           - "{{ usr_sbin.stdout }}"
+#           - "{{ usr_bin.stdout }}"
+#           - "{{ usr_lbin.stdout }}"
+      

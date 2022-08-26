@@ -1,0 +1,21 @@
+---
+  - hosts: all
+    name: no5.1-3 FTP 서비스 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: ftp service check
+        shell: ps -ef | grep 'ftp'
+        register: ftp
+        ignore_errors: yes
+
+ #     - name: vsftpd service check
+ #       shell: ps -ef | egrep 'vsftpd | protfp'
+ #       ignore_errors: yes
+     
+      - debug:
+         msg: 
+            - "{{ ftp.stdout }}"
+ #           - "{{ vsftp.stdout }}"
+

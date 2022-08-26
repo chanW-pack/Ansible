@@ -1,0 +1,24 @@
+---
+  - hosts: all
+    name: no2.14-16 root 원격 접근제어, NFS , 서비스 파일 권한 설정 확인  
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: pam.d/login file check
+        shell: sudo ls -la /etc/pam.d | grep 'login'
+        register: login
+
+      - name: NFS Check
+        shell: sudo ls -la /etc | grep 'exports'
+        register: nfs
+
+      - name: service check
+        shell: sudo ls -la /etc | grep 'services'
+        register: service
+
+      - debug:
+         msg: 
+           - "{{ login.stdout }}"
+           - "{{ nfs.stdout }}"
+           - "{{ service.stdout }}"

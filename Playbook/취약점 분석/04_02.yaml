@@ -1,0 +1,44 @@
+---
+  - hosts: all
+    name: no4.2 syslog 설정 확인  
+    gather_facts: false
+    become: true
+
+    tasks:
+     # - name: syslog process
+      - name: login.defs file check1
+        shell: |
+          ps -ef | grep 'syslog'
+        ignore_errors: yes
+        register: sys
+
+      - debug:
+         var: sys.sdtout_lines
+
+      - name: 시스템 로깅 설정
+        stat:
+         path: /etc/syslog.conf
+        register: file_data
+
+      - name: file o
+        when: file_data.stat.exists
+        debug:
+         msg: "yes"
+        register: file
+      
+      - name: file x
+        when: not file_data.stat.exists
+        debug:
+         msg: "파일 미존재"
+        register: file
+          
+      - name: rsyslog.conf check
+        shell: |
+          cat /etc/rsyslog.conf | grep -e 'authpriv' -e 'mail' -e 'cron' -e 'emerg' -e 'uucp,news.crit$' -e 'local7' -e '.notice' -e '.alert' | grep -v '^#'
+        register: command_output
+
+
+      - debug:
+         var: command_output.stdout_lines
+
+

@@ -1,0 +1,43 @@
+---
+  - hosts: all
+    name: no2.11 주요 디렉터리 파일 권한 설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: check
+        shell: sudo ls -Rla /home | grep '.bash'
+        register: home
+
+      - debug:
+         var: home.stdout_lines
+
+#      - name: /etc
+#        shell: sudo ls -la / | grep 'etc'
+#        register: etc
+#
+#      - name: /bin
+#        shell: sudo ls -la / | grep 'bin'
+#        register: bin
+#
+#      - name: /usr/sbin
+#        shell: sudo ls -la /usr | grep 'sbin'
+#        register: usr_sbin
+#
+#      - name: /usr/bin
+#        shell: sudo ls -la /usr | grep 'bin'
+#        register: usr_bin
+#
+#      - name: /usr/lbin
+#        shell: sudo ls -la /usr | grep 'ibin'
+#        register: usr_lbin
+#
+#      - debug:
+#         msg: 
+#           - "{{ sbin.stdout }}"
+#           - "{{ etc.stdout }}"
+#           - "{{ bin.stdout }}"
+#           - "{{ usr_sbin.stdout }}"
+#           - "{{ usr_bin.stdout }}"
+#           - "{{ usr_lbin.stdout }}"
+      

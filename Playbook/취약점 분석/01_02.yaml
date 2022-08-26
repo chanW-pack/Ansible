@@ -1,0 +1,16 @@
+---
+  - hosts: all
+    name: no1.2 root 권한 관리 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: Except for root UID 0 check
+        shell: |
+          cat /etc/passwd | grep -v 'root' | awk -F: '{if ($3=="0") print $0}'
+        register: command_output
+
+
+      - debug:
+         var: command_output.stdout_lines
+

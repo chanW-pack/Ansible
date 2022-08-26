@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no5.12 SSH 버전 취약성 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: ssh version check
+        shell: rpm -qa openssh-server
+        register: ssh
+        ignore_errors: yes
+
+      - debug:
+         var: ssh.stdout_lines

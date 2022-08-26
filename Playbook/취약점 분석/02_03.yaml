@@ -1,0 +1,44 @@
+---
+  - hosts: all
+    name: no2.3 inetd.conf, xinetd.conf 파일 권한  
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: inetd.conf file check
+        stat:
+         path: /etc/inetd.conf
+        register: file_data
+
+      - name: conf file o
+        when: file_data.stat.exists
+        shell: ls -la /etc | grep 'inetd.conf'
+        register: conf
+
+      - debug:
+         var: conf.stdout_lines
+      
+      - name: conf file x
+        when: not file_data.stat.exists
+        debug:
+         msg: "inetd.conf no"
+        register: conf
+
+      - name: xinetd.conf file check
+        stat:
+         path: /etc/xinetd.d
+        register: boot_data
+
+      - name: xinetd.d file o
+        when: boot_data.stat.exists
+        shell: ls -la /etc/xinetd.d
+        register: boot_g
+
+      - debug:
+         var: boot_g.stdout_lines
+
+      - name: xinetd.d file x
+        when: not boot_data.stat.exists
+        debug:
+         msg: "xintd.d no"
+

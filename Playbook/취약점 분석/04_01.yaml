@@ -1,0 +1,41 @@
+---
+  - hosts: all
+    name: no4.1 su 로그 설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+     # - name: syslog process
+      - name: login.defs file check1
+        shell: |
+          cat /etc/login.defs | grep SULOG
+        ignore_errors: yes
+
+      - name: file 
+        stat:
+         path: /etc/syslog.conf
+        register: file_data
+
+      - name: file o
+        when: file_data.stat.exists
+        debug:
+         msg: "yes"
+        register: file
+      
+      - name: file x
+        when: not file_data.stat.exists
+        debug:
+         msg: "no"
+        register: file
+          
+
+      - name: rsyslog.conf check
+        shell: |
+          cat /etc/rsyslog.conf | grep 'authpriv'
+        register: command_output
+
+
+      - debug:
+         var: command_output.stdout_lines
+
+

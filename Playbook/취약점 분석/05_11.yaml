@@ -1,0 +1,22 @@
+---
+  - hosts: all
+    name: no5.11 samba 버전 취약성 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: sam check
+        shell: ps -ef | grep smb
+        register: samba
+        ignore_errors: yes
+
+      - debug:
+         var: samba.stdout_lines
+
+      - name: sam port check
+        shell: netstat -lntup | grep smb
+        register: sam_port
+        ignore_errors: yes
+
+      - debug:
+         var: sam_port.stdout_lines

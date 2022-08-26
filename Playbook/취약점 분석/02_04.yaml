@@ -1,0 +1,47 @@
+---
+  - hosts: all
+    name: no2.4 .history 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: apache bash
+        shell: find / -type f -name '.bash_history' -exec ls -al {} \;
+        register: apache_bash
+        ignore_errors: yes
+
+      - debug:
+         var: apache_bash.stdout_lines
+      
+      - name: apache bash2
+        shell: find / -type f -name '.sh_history' -exec ls -al {} \;
+        register: apache_bash2
+        ignore_errors: yes
+
+      - debug:
+         var: apache_bash2.stdout_lines
+
+#      - name: tomcat bash
+#        shell: ls -la /home/tomcat | grep '.bash_history'
+#        register: tomcat_bash
+#        ignore_errors: yes
+#
+#      - debug:
+#         var: tomcat_bash.stdout_lines
+#
+#      - name: mnsadmin bash
+#        shell: ls -la /home/mnsadmin | grep '.bash_history'
+#        register: mn_bash
+#        ignore_errors: yes
+#
+#      - debug:
+#         var: mn_bash.stdout_liens
+#
+#      - name: root bash
+#        shell: ls -la /root | grep '.bash_history'
+#        register: root_bash
+#        ignore_errors: yes
+#
+#      - debug:
+#         var: root_bash.stdout_lines
+

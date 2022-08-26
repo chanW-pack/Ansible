@@ -1,0 +1,53 @@
+---
+  - hosts: all
+    name: no4.3 로그파일 권한 설정 확인 
+    gather_facts: false
+    become: true
+
+  #  vars:
+  #    var_logs:
+  #      - wtmp
+  #      - btmp
+  #      - messages
+  #      - lastlog
+  #      - secure
+  #    - name: var_logs batch check
+  #      shell: ls -la /var/log | grep "{{ item }}"
+  #      loop:
+  #        "{{ var_logs }}"
+  #      register: log_out
+  
+    tasks:
+      - name: wtmp
+        shell: ls -la /var/log | grep 'wtmp$'
+        register: wtmp
+
+      - name: utmp
+        shell: ls -la /var/run/ | grep 'utmp$'
+        register: utmp
+
+      - name: btmp
+        shell: ls -la /var/log | grep 'btmp$'
+        register: btmp
+
+      - name: messages
+        shell: ls -la /var/log | grep 'messages$' 
+        register: mes
+
+      - name: lastlog
+        shell: ls -la /var/log | grep 'lastlog$'
+        register: last
+
+      - name: secure
+        shell: ls -la /var/log | grep 'secure$'
+        register: sec
+
+      - debug:
+         msg: 
+            - "{{ wtmp.stdout }}"
+            - "{{ utmp.stdout }}"
+            - "{{ btmp.stdout }}"
+            - "{{ mes.stdout }}"
+            - "{{ last.stdout }}"
+            - "{{ sec.stdout }}"
+

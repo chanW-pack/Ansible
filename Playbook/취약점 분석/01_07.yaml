@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    name: no1.7
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: su
+        shell: |
+          cat /etc/pam.d/su | grep 'required'
+        register: command_output
+        ignore_errors: yes
+
+      - debug:
+         var: command_output.stdout_lines
+
+      - name: bin/su
+        shell: ls -la /bin/ | grep 'su$'
+        register: binsu
+        ignore_errors: yes
+
+      - debug:
+         var: binsu.stdout_lines

@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    name: no5.10 SWAT 강제공격 방지 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: swat file check
+        stat:
+         path: /etc/xinetd.d/swat
+        register: file_data
+
+      - name: file o
+        when: file_data.stat.exists
+        debug:
+         msg: "swat yes"
+        register: swat
+      
+      - name: file x
+        when: not file_data.stat.exists
+        debug:
+         msg: "swat no"
+        register: swat

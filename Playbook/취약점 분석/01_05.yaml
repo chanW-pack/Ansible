@@ -1,0 +1,16 @@
+---
+  - hosts: all
+    name: no1.5 shadow 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: shadow Pemission Check
+        shell: |
+          sudo ls -la /etc | grep 'shadow'
+        register: command_output
+
+
+      - debug:
+         var: command_output.stdout_lines
+

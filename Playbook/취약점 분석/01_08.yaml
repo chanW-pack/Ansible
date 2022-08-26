@@ -1,0 +1,31 @@
+---
+  - hosts: all
+    name: no1.8
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: 패스워드 최소 길이 
+        shell: |
+          cat /etc/login.defs | grep '^PASS_MIN_LEN'
+        register: command_output
+        ignore_errors: yes
+
+      - debug:
+         var: command_output.stdout_lines
+
+      - name: 패스워드 최대 ㅅ ㅏ용기간 
+        shell: cat /etc/login.defs | grep '^PASS_MAX_DAYS'
+        register: binsu
+        ignore_errors: yes
+
+      - debug:
+         var: binsu.stdout_lines
+
+      - name: 패스워드 최소 ㅅ ㅏ용기간 
+        shell: cat /etc/login.defs | grep '^PASS_MIN_DAYS'
+        register: passmin
+        ignore_errors: yes
+
+      - debug:
+         var: passmin.stdout_lines

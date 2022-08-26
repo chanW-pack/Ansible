@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no5.13 xhost + 설정 존재 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: xhost auto start check
+        shell: cat /etc/rc.local | grep xhost
+        register: xhost
+        ignore_errors: yes
+
+      - debug:
+         var: xhost.stdout_lines

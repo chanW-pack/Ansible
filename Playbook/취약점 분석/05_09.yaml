@@ -1,0 +1,22 @@
+---
+  - hosts: all
+    name: no5.9 DNS 보안 버전 패치 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: dns check
+        shell: ps -ef | grep named
+        register: dns
+        ignore_errors: yes
+
+      - name: dns version check
+        shell: named -v
+        register: dns_v
+        ignore_errors: yes
+
+      - debug:
+         msg:
+            - "{{ dns.stdout }}"
+            - "{{ dns_v.stdout }}"
+

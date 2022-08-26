@@ -1,0 +1,37 @@
+---
+  - hosts: all
+    name: no 1.1 사용하지 않는 계정 탐색
+    gather_facts: false
+    become: true
+
+    vars:
+      d_user: 
+        - lp
+        - uucp
+        - nuucp
+        - mail
+        - games
+        - ftp
+        - pipewire
+        - pulse
+        - gluster
+        - setroubleshoot
+        - saslauth
+        - qumu
+        - usbmuxd
+
+    tasks:
+      - name: Explore unused accounts
+        shell: |
+          cut -f1 -d: /etc/passwd | grep -w "{{ item }}"
+
+        loop:
+          "{{ d_user }}"
+        ignore_errors: yes
+          
+        register: command_output
+
+      - debug:
+         var: command_output.stdout_lines
+        ignore_errors: yes
+

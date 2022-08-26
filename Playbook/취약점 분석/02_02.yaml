@@ -1,0 +1,46 @@
+---
+  - hosts: all
+    name: no5.8 dns zone transfer 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: named.conf file check
+        stat:
+         path: /etc/named.conf
+        register: file_data
+
+      - name: conf file o
+        when: file_data.stat.exists
+        debug:
+         msg: "conf yes"
+        register: conf
+      
+      - name: conf file x
+        when: not file_data.stat.exists
+        debug:
+         msg: "conf no"
+        register: conf
+
+      - name: named.boot file check
+        stat:
+         path: /etc/named.boot
+        register: boot_data
+
+      - name: boot o
+        when: boot_data.stat.exists
+        debug:
+         msg: "boot yes"
+
+      - name: boot x
+        when: not boot_data.stat.exists
+        debug:
+         msg: "boot no"
+
+      - name: dns check
+        shell: cat /etc/resolv.conf
+        register: dns
+        ignore_errors: yes
+
+      - debug:
+         var: dns.stdout_lines

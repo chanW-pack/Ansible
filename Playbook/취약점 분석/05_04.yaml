@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no5.4 SNMP 서비스 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: snmp service check
+        shell: ps -ef | grep 'snmp'
+        register: snmp
+        ignore_errors: yes
+
+      - debug:
+         var: snmp.stdout_lines

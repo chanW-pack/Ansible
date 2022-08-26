@@ -1,0 +1,156 @@
+---
+  - hosts: all
+    name: no 1.1 사용하지 않는 계정 탐색
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: lp
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'lp'
+        ignore_errors: yes
+        register: lp
+        tags: lp
+      - debug:
+         var: lp.stdout_lines
+        tags: lp
+
+      - name: uucp
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'uucp'
+        ignore_errors: yes
+        register: uucp
+        tags: uucp
+      - debug:
+         var: uucp.stdout_lines
+        tags: uucp
+
+      - name: nuucp
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'nuucp'
+        ignore_errors: yes
+        register: nuucp
+        tags: nuucp
+      - debug:
+         var: nuucp.stdout_lines
+        tags: nuucp
+
+      - name: mail
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'mail'
+        ignore_errors: yes
+        register: mail
+        ignore_errors: yes
+        tags: mail
+      - debug:
+         var: mail.stdout_lines
+        tags: mail
+
+      - name: games
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'games'
+        register: games
+        ignore_errors: yes
+        tags: games
+      - debug:
+         var: games.stdout_lines
+        tags: games
+
+      - name: ftp
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'ftp'
+        register: ftp
+        ignore_errors: yes
+        tags: ftp
+      - debug:
+         var: ftp.stdout_lines
+        tags: ftp
+
+      - name: pipewire
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'pipewire'
+        register: pipewire
+        ignore_errors: yes
+        tags: pip
+      - debug:
+         var: pipewire.stdout_lines
+        tags: pip
+
+      - name: pulse
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'pulse'
+        register: pulse
+        ignore_errors: yes
+        tags: pulse
+      - debug:
+         var: pulse.stdout_lines
+        tags: pulse
+
+      - name: gluster
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'gluster'
+        register: glouster
+        ignore_errors: yes
+        tags: glo
+      - debug:
+         var: glouster.stdout_lines
+        tags: glo
+
+      - name: setroubleshoot
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'setroubleshoot'
+        register: setroubleshoot
+        ignore_errors: yes
+        tags: set
+      - debug:
+         var: setroubleshoot.stdout_lines
+        tags: set
+
+      - name: saslauth
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'saslauth'
+        register: saslauth
+        ignore_errors: yes
+        tags: sas
+      - debug:
+         var: saslauth.stdout_lines
+        tags: sas
+
+      - name: qumu
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'qumu'
+        register: qumu
+        ignore_errors: yes
+        tags: qumu
+      - debug:
+         var: qumu.stdout_lines
+        tags: qumu
+
+      - name: usbmuxd
+        shell: |
+          cut -f1 -d: /etc/passwd | grep 'usbmuxd'
+        register: usbmuxd
+        ignore_errors: yes
+        tags: usb
+      - debug:
+         var: usbmuxd.stdout_line
+        tags: usb
+
+#      - debug:
+#         msg:
+#            - "{{ lp.stdout }}"
+#            - "{{ uucp.stdout }}"
+#            - "{{ nuucp.stdout }}"
+#            - "{{ mail.stdout }}"
+#            - "{{ games.stdout }}"
+#            - "{{ ftp.stdout }}"
+#            - "{{ pipewire.stdout }}"
+#            - "{{ pulse.stdout }}"
+#            - "{{ gluster.stdout }}"
+#            - "{{ setroubleshoot.stdout }}"
+#            - "{{ saslauth.stdout }}"
+#            - "{{ qumu.stdout }}"
+#            - "{{ usbmuxd.stdout }}"
+#        ignore_errors: yes
+
+

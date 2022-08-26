@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: no5.5-6 sendmail 서비스 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: snmp service check
+        shell: cat /etc/mail.sendmail.cf
+        register: snmp
+        ignore_errors: yes
+
+      - debug:
+         var: snmp.stdout_lines
