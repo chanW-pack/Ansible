@@ -1,0 +1,53 @@
+---
+  - hosts: test
+    name: nmon set
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: 디렉터리 생성 
+        file:
+         path: /tmp/nmon/log
+         state: directory
+        ignore_errors: yes
+
+      - name: nmon 파일 생성
+        file:
+         path: /tmp/nmon/nmonstart.sh
+         state: touch
+         mode: 0755
+        ignore_errors: yes
+        register: nmon_sh
+
+      - name: nmon.sh line create
+        lineinfile:
+          path: /tmp/nmon/nmonstart.sh
+          line: |
+           #!/bin/bash
+           nmon -f -s 60 -c 1440 -m /tmp/nmon/log
+        ignore_errors: yes
+
+      - name: crontab setting
+        lineinfile:
+          path: /etc/crontab
+          line: |
+            
+            # 0831 nmon_test set
+            0 9 * * * root /tmp/nmon/nmonstart.sh
+        ignore_errors: yes
+
+      - name: nmon.sh check
+        when: nmon_sh.stat.exists
+        debug:
+         msg: "nmon.sh setting Success!"
+        register: file
+
+      - name: nmon.sh check2
+        when: not nmon_sh.stat.exists
+        debug: 
+         msg: "nmon.sh setting failed.."
+        register: file
+
+ #     - debug:
+ #        var: bin.stdout_lines
+
