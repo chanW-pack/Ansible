@@ -5,20 +5,23 @@
     become: true
 
     tasks:
-      - name: 디렉터리 생성 
+      # nmon 디렉터리 생성
+      - name: nmon directory create 
         file:
          path: /tmp/nmon/log
          state: directory
         ignore_errors: yes
 
-      - name: nmon 파일 생성
+      # nmon 파일 생성
+      - name: nmon file create
         file:
          path: /tmp/nmon/nmonstart.sh
          state: touch
          mode: 0755
         ignore_errors: yes
         register: nmon_sh
-
+        
+      # nmon 로그 수집 설정
       - name: nmon.sh line create
         lineinfile:
           path: /tmp/nmon/nmonstart.sh
@@ -27,13 +30,14 @@
            nmon -f -s 60 -c 1440 -m /tmp/nmon/log
         ignore_errors: yes
 
+      # crontab 등록, 매일 09:00 작동
       - name: crontab setting
         lineinfile:
           path: /etc/crontab
           line: |
             
             # 0831 nmon_test set
-            0 9 * * * root /tmp/nmon/nmonstart.sh
+            0 9 * * * root /tmp/nmon/nmonstart.sh 
         ignore_errors: yes
 
       - name: nmon.sh check
