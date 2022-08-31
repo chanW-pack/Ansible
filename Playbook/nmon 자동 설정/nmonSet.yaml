@@ -21,7 +21,7 @@
         ignore_errors: yes
         register: nmon_sh
         
-      # nmon 로그 수집 설정
+      # nmon 로그 수집 설정, 24시간 1분단위
       - name: nmon.sh line create
         lineinfile:
           path: /tmp/nmon/nmonstart.sh
