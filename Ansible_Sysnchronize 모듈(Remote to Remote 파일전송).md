@@ -13,7 +13,7 @@ ansible에서 파일을 옮기는 방법은 copy, fetch 등의 방법도 있지�
 
 ## Sysnchrinize default 모드 (push)
 
-![다운로드.png](Ansible_%20Sysnchronize%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF(Remote%20to%20Remote%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20cf0b95e0263f4c8199a2384a483916eb/%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C.png)
+![%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C](https://user-images.githubusercontent.com/84123877/188073186-523a27da-ca0f-4f95-971d-26899cffa50c.png)
 
 > sysnchrionize default 동작
 > 
@@ -53,7 +53,7 @@ delegate_to 옵션이 없으면 ansible-playbook을 실행한 Control Server가 
 
 ## Synchronize pull 모드
 
-![다운로드 (1).png](Ansible_%20Sysnchronize%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF(Remote%20to%20Remote%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20cf0b95e0263f4c8199a2384a483916eb/%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C_(1).png)
+![%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_(1)](https://user-images.githubusercontent.com/84123877/188073190-c117d08e-6252-4b60-91c0-894eaf51497e.png)
 
 > synchronize pull 동작
 > 
