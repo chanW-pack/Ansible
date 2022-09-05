@@ -15,9 +15,9 @@ Microsoft CEO -->
 ## Ansible Funtion
 
 - [작업 제어 구현 - 오류처리](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EC%9E%91%EC%97%85%20%EC%A0%9C%EC%96%B4%20%EA%B5%AC%ED%98%84(%EC%98%A4%EB%A5%98%20%EC%B2%98%EB%A6%AC).md)
-- [When 조건문 및 파일 내용 추가 (+조건이 만족하면 파일추가)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_When%20%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
-- [When 조건문 트리구조 생성 (includ_tasks, 여러 조건 사용)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%ED%8A%B8%EB%A6%AC%EA%B5%AC%EC%A1%B0%20%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
-- [모듈 활용 (shell, copy, yum 등)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EB%AA%A8%EB%93%88.md)
+- [When 조건문](https://github.com/chanW-pack/Ansible/blob/main/Ansible_When%20%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
+- [When 조건문 트리구조 (includ_tasks, 여러 조건 사용)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%ED%8A%B8%EB%A6%AC%EA%B5%AC%EC%A1%B0%20%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
+- [모듈 활용 (shell, user, yum, copy, service, file 등)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EB%AA%A8%EB%93%88.md)
 - [Inventory 작성방법 (ansible.cfg 등록, inventory 변수 기능)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_Inventory.md)
 - [구성파일]
 - [반복문]
