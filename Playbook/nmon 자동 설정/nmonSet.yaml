@@ -40,7 +40,7 @@
             0 9 * * * root /tmp/nmon/nmonstart.sh 
         ignore_errors: yes
         
-       # nmon 파일 체크로 작업 
+      # nmon 파일 체크
   #    - name: nmon.sh check
   #      when: nmon_sh.stat.exists
   #      debug:
