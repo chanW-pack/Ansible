@@ -39,21 +39,21 @@
             # 0831 nmon_test set
             0 9 * * * root /tmp/nmon/nmonstart.sh 
         ignore_errors: yes
+        
+       # nmon 파일 체크로 작업 
+  #    - name: nmon.sh check
+  #      when: nmon_sh.stat.exists
+  #      debug:
+  #       msg: "nmon.sh setting Success!"
+  #      register: file
 
-: <<'END'
-      - name: nmon.sh check
-        when: nmon_sh.stat.exists
-        debug:
-         msg: "nmon.sh setting Success!"
-        register: file
-
-      - name: nmon.sh check2
-        when: not nmon_sh.stat.exists
-        debug: 
-         msg: "nmon.sh setting failed.."
-        register: file
+  #    - name: nmon.sh check2
+  #      when: not nmon_sh.stat.exists
+  #      debug: 
+  #       msg: "nmon.sh setting failed.."
+  #      register: file
     
-END
+
  #     - debug:
  #        var: bin.stdout_lines
 
