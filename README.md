@@ -29,5 +29,5 @@ Microsoft CEO -->
 - [여러 서비스들 계정 삭제](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%97%AC%EB%9F%AC%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%A4%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C.md)
 - [원격 LVM 증설](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_%EC%9B%90%EA%B2%A9%20LVM%20%EC%A6%9D%EC%84%A4.md)
 - [Ansible_sysstat 수집 주기 변경](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_sysstat%20%EC%88%98%EC%A7%91%20%EC%A3%BC%EA%B8%B0%20%EB%B3%80%EA%B2%BD.md)
-- [인프라 취약점 점검/분석 (+)](https://github.com/chanW-pack/Ansible/tree/main/Playbook/%EC%B7%A8%EC%95%BD%EC%A0%90%20%EB%B6%84%EC%84%9D)
+- [인프라 취약점 점검/분석 (+조치)](https://github.com/chanW-pack/Ansible/tree/main/Playbook/%EC%B7%A8%EC%95%BD%EC%A0%90%20%EB%B6%84%EC%84%9D)
 - [nmon 수집주기 자동 생성](https://github.com/chanW-pack/Ansible/tree/main/Playbook/nmon%20%EC%9E%90%EB%8F%99%20%EC%84%A4%EC%A0%95)
