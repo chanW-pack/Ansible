@@ -40,6 +40,7 @@
             0 9 * * * root /tmp/nmon/nmonstart.sh 
         ignore_errors: yes
 
+\\<!--
       - name: nmon.sh check
         when: nmon_sh.stat.exists
         debug:
@@ -51,7 +52,7 @@
         debug: 
          msg: "nmon.sh setting failed.."
         register: file
-
+-->
  #     - debug:
  #        var: bin.stdout_lines
 
