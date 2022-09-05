@@ -19,9 +19,9 @@ Microsoft CEO -->
 - [When 조건문 트리구조 (includ_tasks, 여러 조건 사용)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%ED%8A%B8%EB%A6%AC%EA%B5%AC%EC%A1%B0%20%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
 - [모듈 활용 (shell, user, yum, copy, service, file 등)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EB%AA%A8%EB%93%88.md)
 - [Inventory 작성방법 (ansible.cfg 등록, inventory 변수 기능)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_Inventory.md)
-- [구성파일]
-- [반복문]
-- []
+- [구성파일 (cfg)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EA%B5%AC%EC%84%B1%20%ED%8C%8C%EC%9D%BC(cfg).md)
+- [반복문 (loop, with_item)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EB%B0%98%EB%B3%B5%EB%AC%B8.md)
+- [Sysnchronize 모듈 (Remote to Remote 파일전송)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_Sysnchronize%20%EB%AA%A8%EB%93%88(Remote%20to%20Remote%20%ED%8C%8C%EC%9D%BC%EC%A0%84%EC%86%A1).md)
 
 ## Ansible PlayBook (기능 구현)
 
