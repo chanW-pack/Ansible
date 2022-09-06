@@ -38,7 +38,7 @@ ansible의 lineinfile 모듈은 regular expression을 사용하여 파일의 내
 > 정리하면 /home/rc.local 파일에 line 부분에 해당하는 내용을 추가하는 기능이다.
 > 
 
-~~(파일명이 rc.local 인걸로 실습 이유를 눈치채셨을까요??)~~
+~~(파일명이 rc.local 인것은.. ??)~~
 
 ![Untitled 1](https://user-images.githubusercontent.com/84123877/180950859-b26078d9-aad0-413a-8389-79a373e44e65.png)
 
