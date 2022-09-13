@@ -1,0 +1,20 @@
+---
+  - hosts: test
+    name: /usr/bin/crontab 권한확인 (0750)
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: crontab  check (0750)
+        stat:
+          path: /usr/bin/crontab
+        register: cron
+
+      - name: crontab check
+        shell: ls -la /usr/bin/crontab
+        ignore_errors: yes
+        register: xinpms
+
+      - debug:
+         var: xinpms.stdout_lines
+        when: cron.stat.exists == True
