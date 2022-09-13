@@ -1,0 +1,16 @@
+---
+  - hosts: test
+    name: passwd 정책 취약점 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: pwquality.conf check 
+        shell: cat /etc/security/pwquality.conf | grep -e 'lcredit' -e 'ucredit' -e 'dcredit' -e 'ocredit' 
+        ignore_errors: yes
+        register: check
+
+      - debug:
+         var: check.stdout_lines
+
+

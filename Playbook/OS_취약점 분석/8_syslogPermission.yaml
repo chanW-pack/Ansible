@@ -1,0 +1,22 @@
+---
+  - hosts: test
+    name: syslog.conf 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: rsyslog.conf  check
+        stat:
+          path: /etc/rsyslog.conf
+        register: syslog
+        
+      - name: rsyslog.conf check2
+        shell: ls -la /etc | grep 'syslog.conf'
+        ignore_errors: yes
+        register: syslogper
+
+      - name: debug
+        debug:
+         var: syslogper.stdout_lines
+        when: syslog.stat.exists == True
+

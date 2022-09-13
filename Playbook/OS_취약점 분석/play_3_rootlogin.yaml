@@ -1,0 +1,26 @@
+---
+  - hosts: test
+    name: root 계정 su 제한
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: sshd_config Modify
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: ^PermitRootLogin
+          line: PermitRootLogin no
+          backup: yes
+        ignore_errors: no
+
+      - name: sshd_config file Check
+        shell: cat /etc/ssh/sshd_config | grep 'PermitRootLogin'
+        ignore_errors: yes
+        register: login
+
+     - name: ssh restart
+       shell: service sshd restart
+
+      - debug:
+         var: login.stdout_lines
+

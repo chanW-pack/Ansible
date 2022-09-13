@@ -1,0 +1,16 @@
+---
+  - hosts: test
+    name: rsyslog.conf 파일 권한 확인
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: rsyslog permission chage
+        shell: chmod 640 /etc/rsyslog.conf
+        ignore_errors: yes
+        register: syslog
+
+      - debug:
+         var: syslog.stdout_lines
+
+

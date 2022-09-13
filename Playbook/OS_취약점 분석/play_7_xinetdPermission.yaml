@@ -1,0 +1,16 @@
+---
+  - hosts: test
+    name: xinetd.d 권한 변경  
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: xinetd.d permission chage
+        shell: chmod 600 /etc/xinetd.d
+        ignore_errors: yes
+        register: xin
+
+      - debug:
+         var: xin.stdout_lines
+
+

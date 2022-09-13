@@ -1,0 +1,28 @@
+---
+  - hosts: test
+    name: at.allow, at.deny 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: usr/bin/at permission chage
+        shell: chmod 0750 /usr/bin/at
+
+      - name: at.deny permission chage
+        shell: chmod 640 /etc/at.deny
+
+      - name: /usr/bin/at check
+        shell: ls -la /usr/bin/at
+        register: bin_at
+
+      - name: at.deny check
+        shell: ls -la /etc/at.deny
+        register: deny_ls
+
+
+      - debug:
+         var: bin_at.stdout_lines
+
+      - debug:
+         var: deny_ls.stdout_lines
+

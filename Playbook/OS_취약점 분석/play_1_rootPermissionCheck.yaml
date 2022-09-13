@@ -1,0 +1,48 @@
+---
+  - hosts: test
+    name: root 계정 su 제한
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: test user add (issue prevention)
+        shell: useradd crmKT
+        ignore_errors: yes
+
+      - name: wheel group add user
+        shell: |
+          usermod -G wheel cerasys
+          usermod -G wheel crmKT
+        ignore_errors: no
+
+      - name: pam.d/su file Modify
+        lineinfile:
+          path: /etc/pam.d/su
+          regexp: pam_wheel.so use_uid
+          line: auth           required        pam_wheel.so use_uid
+          backup: yes
+        ignore_errors: no
+
+      - name: pam.d/su file Check
+        shell: cat /etc/pam.d/su | grep 'wheel'
+        ignore_errors: yes
+        register: pam
+
+      - debug:
+         var: pam.stdout_lines
+
+      - name: wheel 그룹 포함 유저 확인 
+        shell: cat /etc/group | grep 'wheel'
+        ignore_errors: yes
+        register: group
+
+      - debug:
+         var: group.stdout_lines
+
+      - name: /bin/su chmod 4750 set
+        shell: chmod 4750 /usr/bin/su
+        register: bin_su
+
+      - debug: 
+         var: bin_su.stdout_lines
+

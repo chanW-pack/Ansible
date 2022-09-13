@@ -1,0 +1,23 @@
+---
+  - hosts: test
+    name: passwd deny
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: pwquality.conf Modify
+        lineinfile:
+          path: /etc/pam.d/system-auth
+          insertafter: auth        required      pam_deny.so
+          line: auth        required      /lib/security/pam_tally.so deny=5 unlock_time=120 no_magic_root account required /lib/security/pam_tally.so no_magic_root reset
+          backup: yes
+        ignore_errors: no
+
+      - name: sshd_config file Check
+        shell: cat /etc/pam.d/system-auth | grep 'pam_tally.so'
+        ignore_errors: yes
+        register: login
+
+      - debug:
+         var: login.stdout_lines
+

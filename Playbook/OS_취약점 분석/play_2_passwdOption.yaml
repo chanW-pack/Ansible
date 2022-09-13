@@ -1,0 +1,67 @@
+---
+  - hosts: test
+    name: 패스워드 정책 수정 
+    gather_facts: false
+    become: true
+
+    tasks:
+      # /etc/login.defs 패스워드 최소길이 수정
+      - name: login.defs modify 
+        lineinfile:
+          path: /etc/login.defs
+          regexp: PASS_MIN_LEN
+          line: PASS_MIN_LEN    9
+          backup: yes
+        ignore_errors: no
+
+      - name: login.defs Check
+        shell: cat /etc/login.defs | grep 'PASS_MIN_LEN'
+        register: minlen
+
+      # /pam.d/passwd 재시도횟수, 최소길이, 영어 대소문자, 기타문자 관련 설정 (RHEL 5 버전 방식이라  제외)
+      #- name: pam.d/passwd set
+      #  lineinfile:
+      #    path: /etc/pam.d/passwd
+      #    line: password requisite /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1
+      #    backup: yes
+      #  ignore_errors: no
+
+      # - name: pam.d passwd check
+      #  shell: cat /etc/pam.d/passwd | grep 'password requisite'
+      #  register: pam_pw
+ 
+      # 패스워드 최대 사용기간 설정 
+      - name: max_day modify
+        lineinfile:
+          path: /etc/login.defs
+          regexp: PASS_MAX_DAYS
+          line: PASS_MAX_DAYS   90
+      
+      - name: max_day Check
+        shell: cat /etc/login.defs | grep 'PASS_MAX_DAYS'
+        register: maxday
+
+      # 패스워드 최소 사용기간 설정  
+      - name: min_day modify
+        lineinfile:
+          path: /etc/login.defs
+          regexp: PASS_MIN_DAYS
+          line: PASS_MIN_DAYS   7
+
+      - name: min_day Check
+        shell: cat /etc/login.defs | grep 'PASS_MIN_DAYS'
+        register: minday
+      
+      # 결과값 내보내기 
+      - debug:
+         var: minlen.stdout_lines
+
+      - debug:
+         var: maxday.stdout_lines
+
+      - debug:
+         var: minday.stdout_lines
+
+      - debug:
+         var: pam_pw.stdout_lines
+

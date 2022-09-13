@@ -1,0 +1,45 @@
+---
+  - hosts: test
+    name: passwd other
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: pwquality.conf Modify
+        lineinfile:
+          path: /etc/security/pwquality.conf
+          regexp: lcredit
+          line: lcredit = 1
+          backup: yes
+        ignore_errors: no
+
+      - name: pwquality.conf Modify2
+        lineinfile:
+          path: /etc/security/pwquality.conf
+          regexp: ucredit
+          line: ucredit = 1
+        ignore_errors: no
+
+      - name: pwquality.conf Modify3
+        lineinfile:
+          path: /etc/security/pwquality.conf
+          regexp: dcredit 
+          line: dcredit = 1
+        ignore_errors: no
+
+      - name: pwquality.conf Modify4
+        lineinfile:
+          path: /etc/security/pwquality.conf
+          regexp: ocredit
+          line: ocredit = 1
+        ignore_errors: no
+
+
+      - name: sshd_config file Check
+        shell: cat /etc/security/pwquality.conf | grep -e 'lcredit' -e 'ucredit' -e 'dcredit' -e 'ocredit'
+        ignore_errors: yes
+        register: login
+
+      - debug:
+         var: login.stdout_lines
+

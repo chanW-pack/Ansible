@@ -1,0 +1,38 @@
+---
+  - hosts: test
+    name: /usr/bin/at, at.deny 파일 권한 확인 
+    gather_facts: false
+    become: true
+
+    tasks:
+
+      - name: usr/bin/at check
+        stat:
+          path: /usr/bin/at
+        register: allow1
+        
+      - name: usr/bin/at check2
+        shell: ls -la /usr/bin/at
+        ignore_errors: yes
+        register: allow2
+
+      - name: debug
+        debug:
+         var: allow2.stdout_lines
+        when: allow1.stat.exists == True
+
+      - name: at.deny check1
+        stat: 
+          path: /etc/at.deny
+        register: deny1
+
+      - name: at.deny check2
+        shell: ls -la /etc | grep 'at.deny'
+        ignore_errors: yes
+        register: deny2
+
+      - debug:
+         var: deny2.stdout_lines
+        when: deny1.stat.exists == True
+
+

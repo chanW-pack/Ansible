@@ -1,0 +1,16 @@
+---
+  - hosts: test
+    name: root 계정 원격 접속 불가 설정 
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: root 원격 접속 확인 
+        shell: cat /etc/ssh/sshd_config | grep 'PermitRootLogin'
+        ignore_errors: yes
+        register: check
+
+      - debug:
+         var: check.stdout_lines
+
+

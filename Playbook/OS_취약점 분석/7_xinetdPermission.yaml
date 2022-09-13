@@ -1,0 +1,22 @@
+---
+  - hosts: test
+    name: xinetd.conf 파일 권한 확인 (소유자 root 권한 600)
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: xinetd.d check
+        stat:
+          path: /etc/xinetd.d
+        register: xin
+
+      - name: xinetd.d check
+        shell: ls -la /etc | grep 'xinetd.d'
+        ignore_errors: yes
+        register: xinpms
+
+      - debug:
+         var: xinpms.stdout_lines
+        when: xin.stat.exists == True
+
+
