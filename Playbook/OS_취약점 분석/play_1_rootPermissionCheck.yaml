@@ -39,6 +39,7 @@
       - debug:
          var: group.stdout_lines
 
+      # 4750 권한줘버리깐 root말고는 su 못들어오네.. 이거맞냐
       - name: /bin/su chmod 4750 set
         shell: chmod 4750 /usr/bin/su
         register: bin_su
