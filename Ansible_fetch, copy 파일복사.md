@@ -10,7 +10,7 @@ ansible의 Fetch, Copy 모듈은 linux의 scp 명령어 동작방식과 유사�
 
 기본적인 모듈 사용에 관한 설명은 ansible 가이드 페이지에서 확인할 수 있다.
 
-<fetct, copy>
+<fetct, copy >
 
 [docs.ansible.com/ansible/2.3/fetch_module.html](https://docs.ansible.com/ansible/2.3/fetch_module.html)
 
