@@ -1,0 +1,17 @@
+---
+  - hosts: test
+    name: crontab 권한 변경
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: xinetd.d permission chage
+        shell: chmod 0750 /usr/bin/crontab
+        ignore_errors: no
+
+      - name: chage check
+        shell: ls -la /usr/bin/crontab
+        register: xin
+
+      - debug:
+         var: xin.stdout_lines
