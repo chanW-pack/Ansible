@@ -23,6 +23,7 @@ Microsoft CEO -->
 - [반복문 (loop, with_item)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_%EB%B0%98%EB%B3%B5%EB%AC%B8.md)
 - [Sysnchronize 모듈 (Remote to Remote 파일전송)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_Sysnchronize%20%EB%AA%A8%EB%93%88(Remote%20to%20Remote%20%ED%8C%8C%EC%9D%BC%EC%A0%84%EC%86%A1).md)
 - [fetch, copy 모듈 (파일 복사)](https://github.com/chanW-pack/Ansible/blob/main/Ansible_fetch%2C%20copy%20%ED%8C%8C%EC%9D%BC%EB%B3%B5%EC%82%AC.md) 
+- [lineinfile 모듈(파일 수정)] (https://github.com/chanW-pack/Ansible/blob/main/Ansible_lineinfile%20%EB%AA%A8%EB%93%88(%ED%8C%8C%EC%9D%BC%20%EC%88%98%EC%A0%95).md)
 
 ## Ansible PlayBook (기능 구현)
 
