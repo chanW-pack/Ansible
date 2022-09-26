@@ -1,0 +1,17 @@
+---
+  - hosts: all
+    name: server config file copy all server
+    gather_facts: false
+    become: true
+
+    tasks:
+      - copy:
+          src: /home/ansible/deploy-inventory/ansibleHistory/0924/configBack.sh
+          dest: /home/env_con/configBack.sh
+
+      - shell: ls -la /home/env_con | grep configBack.sh
+        ignore_errors: yes
+        register: bin
+
+      - debug:
+         var: bin.stdout_lines
