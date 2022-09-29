@@ -38,4 +38,5 @@ when 조건문을 사용하여 결과에 다른 debug(msg)를 전송한다.
 ![Untitled 1](https://user-images.githubusercontent.com/84123877/192960287-eaef79ba-17ff-4faa-b590-a025db4d99fd.png)
 
 > 현재 전체 서버에 NFS mount가 잘 되어 있어, NFS not mount TASK는 skipping 된 것을 볼 수 있다.
->
+
+---
