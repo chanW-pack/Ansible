@@ -1,0 +1,24 @@
+---
+  - hosts: all
+    name: server NFS mount check
+    gather_facts: false
+    become: true
+
+    tasks:
+      - name: server NFS mount check
+        shell: df -h | grep 'NFS'
+        ignore_errors: yes
+        register: bin
+
+    #  - debug:
+    #     var: bin.stdout_lines
+
+      - name: NFS not mount
+        debug:
+         msg: "NFS mount is not set."
+        when: bin is failed
+
+      - name: NFS settings nomal
+        debug:
+         msg: "NFS mount settings are cool."
+        when: bin is changed
