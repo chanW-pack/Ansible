@@ -2,7 +2,7 @@
 
 ---
 
-![Untitled](Ansible%20server%20NFS%20mount%20check%20c71b020868754d7e9278227aa4ffa464/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/192960291-35977d42-a267-4d90-9064-2616d3a13416.png)
 
 ```yaml
 ---
@@ -35,7 +35,7 @@
 
 when 조건문을 사용하여 결과에 다른 debug(msg)를 전송한다.
 
-![Untitled](Ansible%20server%20NFS%20mount%20check%20c71b020868754d7e9278227aa4ffa464/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/192960287-eaef79ba-17ff-4faa-b590-a025db4d99fd.png)
 
 > 현재
 >
