@@ -34,3 +34,4 @@ Microsoft CEO -->
 - [Ansible_sysstat 수집 주기 변경](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible_sysstat%20%EC%88%98%EC%A7%91%20%EC%A3%BC%EA%B8%B0%20%EB%B3%80%EA%B2%BD.md)
 - [인프라 취약점 점검/분석 (+조치)](https://github.com/chanW-pack/Ansible/tree/main/Playbook/%EC%B7%A8%EC%95%BD%EC%A0%90%20%EB%B6%84%EC%84%9D)
 - [nmon 수집주기 자동 생성](https://github.com/chanW-pack/Ansible/tree/main/Playbook/nmon%20%EC%9E%90%EB%8F%99%20%EC%84%A4%EC%A0%95)
+- [NFS mount check](https://github.com/chanW-pack/Ansible/blob/main/Playbook/Ansible%20server%20NFS%20mount%20check.md)
