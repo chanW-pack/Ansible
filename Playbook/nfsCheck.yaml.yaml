@@ -4,6 +4,10 @@
     gather_facts: false
     become: true
 
+# server NFS mount check
+# NFS와 마운트 상태를 확인한 뒤, 
+# mount 이상 유무에 따라 when 조건을 이용하여 msg를 나타낸다.
+
     tasks:
       - name: server NFS mount check
         shell: df -h | grep 'NFS'
