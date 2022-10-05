@@ -12,7 +12,7 @@ NFS mount를 확인하였고, 이제 NFS mount에 이상이 없는지 파일을 
 
 ---
 
-![Untitled](Ansible%20server%20NFS%20mount%20Test%20a6fb884c9da04adca3480f3e65717ce7/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/84123877/193964452-7ce52e9b-e802-46e7-821f-b427ae868014.png)
 
 ```yaml
 ---
@@ -61,11 +61,11 @@ NFS mount를 확인하였고, 이제 NFS mount에 이상이 없는지 파일을 
 
 ---
 
-![Untitled](Ansible%20server%20NFS%20mount%20Test%20a6fb884c9da04adca3480f3e65717ce7/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/84123877/193964446-cf4f4f01-3ebd-408a-af6d-6928c191f80b.png)
 
-![Untitled](Ansible%20server%20NFS%20mount%20Test%20a6fb884c9da04adca3480f3e65717ce7/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/84123877/193964450-148a97a9-a0c2-4845-a145-6fc6e39fe956.png)
 
-![Untitled](Ansible%20server%20NFS%20mount%20Test%20a6fb884c9da04adca3480f3e65717ce7/Untitled%203.png)
+![Untitled 3](https://user-images.githubusercontent.com/84123877/193964451-c25624de-f27c-4174-a670-10523c556460.png)
 
 생성이 완료되었다.
 
