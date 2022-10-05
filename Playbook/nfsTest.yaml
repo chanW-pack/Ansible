@@ -1,0 +1,20 @@
+---
+  - hosts: NFS
+    name: server NFS mount test
+    gather_facts: false
+    become: true
+
+    tasks:
+      # NFS mount 위치를 변수로 저장
+      - shell: df -h | grep ':' | awk '{print $6}'
+        register: mp
+
+      # hosts server IP를 변수로 저장
+      - name: Get ip
+        command: hostname -i
+        register: public_ip
+
+      # NFS mount 변수 값(위치)에 hosts server IP(이름)으로 테스트 파일 생성
+      - file:
+          path: "{{mp.stdout}}/test-{{public_ip.stdout}}"
+          state: touch
