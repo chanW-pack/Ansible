@@ -37,7 +37,7 @@ NFS mount를 확인하였고, 이제 NFS mount에 이상이 없는지 파일을 
           state: touch
 ```
 
-두 변수로 file 모듈의 path(위치)를 지정할 때, 이슈가 있었다.
+두 변수로 file 모듈의 path(위치)를 지정할 때, 이슈가 있었는데,
 
 문자열에 변수를 넣을 방법을 찾으며 처음에는 `path: mp.stdout/test-public_ip.stdout` 으로 진행하였으나, 오류가 발생했다.
 
